@@ -1,0 +1,365 @@
+%% TECH2100 — Introduction to Information Networks
+%% Assessment 1: Report Evaluation — Network Architecture & Communication Protocols
+%% Kaplan Business School — Master of Information Technology
+%% ------------------------------------------------------------------
+%% LaTeX template configured for Overleaf + Git sync.
+%% Referencing: Kaplan Harvard Style Guide (v4.0, Feb 2023)
+%% ------------------------------------------------------------------
+
+\documentclass[12pt, a4paper]{article}
+
+% ── Encoding & Language ─────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[australian]{babel}          % Australian English spelling
+
+% ── Page Geometry ───────────────────────────────────────────────────
+\usepackage[
+  top=2.54cm,
+  bottom=2.54cm,
+  left=2.54cm,
+  right=2.54cm
+]{geometry}
+
+% ── Fonts ───────────────────────────────────────────────────────────
+\usepackage{mathptmx}                   % Times New Roman equivalent
+\usepackage{setspace}
+\onehalfspacing                         % 1.5 line spacing (academic standard)
+
+% ── Paragraphs ──────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}             % No first-line indent
+\setlength{\parskip}{6pt}              % Space between paragraphs
+
+% ── Graphics & Figures ──────────────────────────────────────────────
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}                      % [H] placement
+\usepackage[labelfont=bf]{caption}      % Bold "Figure X:"
+
+% ── Tables ──────────────────────────────────────────────────────────
+\usepackage{booktabs}                   % Professional table rules
+\usepackage{tabularx}                   % Full-width tables
+\usepackage{array}
+
+% ── Colour & Links ──────────────────────────────────────────────────
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+  colorlinks  = true,
+  linkcolor   = NavyBlue,
+  citecolor   = NavyBlue,
+  urlcolor    = RoyalBlue,
+  breaklinks  = true
+]{hyperref}
+
+% ── Section Formatting ──────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% ── Headers & Footers ──────────────────────────────────────────────
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small TECH2100 --- Assessment 1}
+\fancyhead[R]{\small\thepage}
+\fancyfoot[C]{\small\textit{Confidential --- Kaplan Business School}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.2pt}
+
+% ── Harvard Referencing (Kaplan-aligned) ────────────────────────────
+% natbib with agsm style produces Harvard author-date citations.
+% Kaplan quirks handled:
+%   - In-text: "and" between two authors; "et al." for 4+ authors
+%   - Brackets: (Author Year) or (Author Year, p. XX)
+%   - Reference list: alphabetical, left-justified, single-spaced
+\usepackage[round]{natbib}
+\bibliographystyle{kaplan-harvard}      % Custom .bst in this repo
+\setlength{\bibsep}{0pt}               % Single spacing between refs
+\setlength{\bibhang}{1.27cm}           % Hanging indent (standard)
+
+% ── Miscellaneous ──────────────────────────────────────────────────
+\usepackage{enumitem}                   % Customisable lists
+\usepackage{microtype}                  % Better typography
+\usepackage{csquotes}                   % Smart quotes
+\usepackage[section]{placeins}          % Keep floats within sections
+\usepackage{pdfpages}                   % Include external PDFs (diagrams)
+
+% ── Word-count helper ──────────────────────────────────────────────
+% Run:  texcount -inc -total main.tex
+% Target: 1,500 words (+/- 10%), excl. references & appendices
+
+% ────────────────────────────────────────────────────────────────────
+%                         DOCUMENT START
+% ────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ═══════════════════════════════════════════════════════════════════
+%  TITLE PAGE
+% ═══════════════════════════════════════════════════════════════════
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+
+  {\LARGE\bfseries TECH2100 --- Introduction to Information Networks\\[6pt]}
+  {\Large Assessment 1: Report Evaluation\\[24pt]}
+
+  \rule{\textwidth}{1pt}\\[18pt]
+
+  {\huge\bfseries Network Architecture Evaluation\\
+  for a Financial Consulting Firm\\[18pt]}
+
+  \rule{\textwidth}{1pt}\\[36pt]
+
+  {\Large
+    % ── REPLACE with your details ──
+    \textbf{Student Name:} Your Name Here\\[6pt]
+    \textbf{Student ID:}   XXXXXXX\\[6pt]
+    \textbf{Trimester:}    T1 2026\\[6pt]
+    \textbf{Campus:}       Your Campus\\[6pt]
+    \textbf{Lecturer:}     Lecturer Name\\[6pt]
+    \textbf{Word Count:}   XXXX / 1500\\[24pt]
+  }
+
+  \vfill
+  {\large Kaplan Business School\\[6pt]}
+  {\large Master of Information Technology\\[6pt]}
+  {\large \today}
+\end{titlepage}
+
+% ═══════════════════════════════════════════════════════════════════
+%  TABLE OF CONTENTS
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\tableofcontents
+\newpage
+
+% ═══════════════════════════════════════════════════════════════════
+%  1. EXECUTIVE SUMMARY
+% ═══════════════════════════════════════════════════════════════════
+\section{Executive Summary}
+\label{sec:executive-summary}
+
+% TODO: Briefly summarise the report's purpose, key findings, and
+% recommendations. Aim for ~150 words. This section sets the context
+% for the reader — state the problem, your approach, and the outcome.
+
+% ── EXAMPLE CITATIONS (delete these when writing your actual content) ──
+% These demonstrate Kaplan Harvard in-text citation formats for your reference:
+%
+% Parenthetical citation: \citep{Kurose2021}
+%   → (Kurose & Ross 2021)
+%
+% Textual citation: \citet{Tanenbaum2021}
+%   → Tanenbaum, Feamster and Wetherall (2021)
+%
+% With page number: \citep[p.~42]{Stallings2022}
+%   → (Stallings 2022, p. 42)
+%
+% Multiple sources: \citep{Kurose2021,Tanenbaum2021}
+%   → (Kurose & Ross 2021; Tanenbaum et al. 2021)
+
+\textit{[Write your executive summary here. Cover the firm's network
+challenges, your proposed architecture, and the key recommendations
+you make throughout the report.]}
+
+% Include all references for the preview build (remove for final submission):
+\nocite{*}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  2. NETWORK DESIGN
+% ═══════════════════════════════════════════════════════════════════
+\section{Network Architecture Design}
+\label{sec:network-design}
+
+% TODO: Present and explain the proposed network architecture.
+% Include LAN/WAN integration, topology choices, and protocols.
+
+\textit{[Introduce the network design and the rationale behind your
+chosen topology. Reference the scenario's requirements: 150--200
+employees, real-time financial analytics, secure client communications.]}
+
+\subsection{Proposed Topology and LAN/WAN Integration}
+\label{subsec:topology}
+
+% TODO: Describe the physical and logical topology. Justify choices
+% with academic sources — e.g., why a hierarchical three-tier model
+% (core, distribution, access) suits this scenario.
+% Example citation: \citep{Kurose2021} or \citet{Tanenbaum2021}
+
+\textit{[Describe the topology here.]}
+
+\subsection{Network Architecture Diagram}
+\label{subsec:diagram}
+
+% Place your diagram(s) in the figures/ folder and reference like this:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{network_architecture.png}
+%   \caption{Proposed network architecture for the financial consulting firm.}
+%   \label{fig:network-arch}
+% \end{figure}
+
+\textit{[Insert your network architecture diagram here. Remember to include
+your name and student ID as a watermark or in the header/footer of
+all diagrams, as required by the assessment brief.]}
+
+\subsection{Communication Protocols}
+\label{subsec:protocols}
+
+% TODO: Discuss the protocols selected (e.g., TCP/IP stack, OSPF/BGP
+% for routing, TLS 1.3 for encryption, QoS mechanisms).
+% Relate choices to the OSI or TCP/IP layered models (LO2).
+
+\textit{[Discuss your chosen protocols and map them to the relevant
+layers of the OSI/TCP-IP model.]}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  3. CRITICAL ANALYSIS
+% ═══════════════════════════════════════════════════════════════════
+\section{Critical Analysis}
+\label{sec:critical-analysis}
+
+% TODO: Critically evaluate strengths and weaknesses of your design.
+% Analyse causes of fluctuating data transmission rates from the scenario.
+% Propose enhancements for reliability and peak-load performance.
+
+\subsection{Strengths and Weaknesses of the Proposed Design}
+\label{subsec:strengths-weaknesses}
+
+\textit{[Evaluate the trade-offs in your design. Consider scalability,
+fault tolerance, cost, and security. Compare alternatives — e.g.,
+monolithic vs.\ distributed architectures.]}
+
+\subsection{Analysis of Fluctuating Data Transmission Rates}
+\label{subsec:transmission-analysis}
+
+% TODO: Investigate potential root causes tied to the scenario's 500 Mbps
+% bandwidth, peak-hour congestion, and suboptimal configuration.
+
+\textit{[Analyse the causes of inconsistent transmission rates. Draw
+on academic sources discussing bandwidth allocation, congestion
+control, and QoS mechanisms.]}
+
+\subsection{Proposed Enhancements}
+\label{subsec:enhancements}
+
+\textit{[Describe specific improvements — e.g., link aggregation,
+load balancing, traffic shaping — and justify with evidence.]}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  4. SCENARIO-BASED PROBLEM SOLVING
+% ═══════════════════════════════════════════════════════════════════
+\section{Scenario-Based Problem Solving}
+\label{sec:problem-solving}
+
+% TODO: Suggest hardware, software, and protocol upgrades.
+% Focus on: high availability, fault tolerance, scalability,
+% minimal latency, and secure high-volume data handling.
+
+\subsection{Hardware and Software Upgrades}
+\label{subsec:hw-sw-upgrades}
+
+\textit{[Recommend specific upgrades — e.g., 10 GbE switches,
+SD-WAN controllers, next-gen firewalls — and justify each.]}
+
+\subsection{Protocol and Configuration Recommendations}
+\label{subsec:protocol-recommendations}
+
+\textit{[Recommend protocol-level changes — e.g., migrating to
+OSPF for dynamic routing, implementing VLANs for segmentation,
+deploying TLS~1.3 for encrypted communications.]}
+
+\subsection{Scalability and Future Growth}
+\label{subsec:scalability}
+
+\textit{[Address how the design accommodates growth beyond 200
+employees and increasing data volumes.]}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  5. ETHICAL CONSIDERATIONS — GENERATIVE AI
+% ═══════════════════════════════════════════════════════════════════
+\section{Ethical Considerations of Generative AI in Network Communications}
+\label{sec:ethics-ai}
+
+% TODO: Analyse ethical implications of deploying Gen AI in network
+% management. Cover biases, privacy, and mitigation strategies.
+% Consider how AI can simulate network loads and predict failures.
+
+\subsection{Ethical Implications and Risks}
+\label{subsec:ai-risks}
+
+\textit{[Discuss bias in AI decision-making for traffic routing,
+privacy concerns with AI-driven network monitoring, and data
+sovereignty issues.]}
+
+\subsection{Mitigation Strategies}
+\label{subsec:ai-mitigation}
+
+\textit{[Propose strategies: explainable AI, human-in-the-loop
+oversight, data anonymisation, ethical AI governance frameworks.]}
+
+\subsection{AI for Network Simulation and Failure Prediction}
+\label{subsec:ai-simulation}
+
+\textit{[Explore how generative AI can model network loads, predict
+bottlenecks, and support proactive maintenance.]}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  6. CONCLUSION
+% ═══════════════════════════════════════════════════════════════════
+\section{Conclusion}
+\label{sec:conclusion}
+
+\textit{[Summarise the key findings and recommendations. Tie back
+to the objective: a scalable, fault-tolerant, secure network for
+the financial consulting firm. Keep this concise — ~100 words.]}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  REFERENCE LIST
+% ═══════════════════════════════════════════════════════════════════
+% Kaplan Harvard rules:
+%   - Heading: "Reference List"
+%   - Alphabetical by first author surname
+%   - Left justified, single spacing, same font as body
+%   - Hanging indent
+%   - Minimal capitalisation (first word + proper nouns only)
+\newpage
+\renewcommand{\refname}{Reference List}
+\bibliography{references}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  APPENDICES (optional — not counted in word limit)
+% ═══════════════════════════════════════════════════════════════════
+\newpage
+\appendix
+\section{Appendix A: Network Architecture Diagram (Full Size)}
+\label{app:diagram}
+
+% \includegraphics[width=\textwidth]{network_architecture_full.png}
+
+\textit{[Include full-size diagrams here if they are too large for
+the body of the report.]}
+
+\section{Appendix B: Process Documentation}
+\label{app:process}
+
+% TODO: Document your thought process and decision-making journey
+% from initial design to final recommendations (assessment requirement).
+
+\textit{[Document your design evolution: initial assumptions,
+alternatives considered, trade-offs evaluated, and how you arrived
+at the final recommendations.]}
+
+\end{document}
