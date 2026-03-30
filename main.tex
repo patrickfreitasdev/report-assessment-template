@@ -1,8 +1,6 @@
-%% TECH2100 — Introduction to Information Networks
-%% Assessment 1: Report Evaluation — Network Architecture & Communication Protocols
-%% Kaplan Business School — Master of Information Technology
+%% Kaplan Business School — Report Template
 %% ------------------------------------------------------------------
-%% LaTeX template configured for Overleaf + Git sync.
+%% Generic LaTeX template for Overleaf + Git sync.
 %% Referencing: Kaplan Harvard Style Guide (v4.0, Feb 2023)
 %% ------------------------------------------------------------------
 
@@ -65,19 +63,14 @@
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small TECH2100 --- Assessment 1}
+\fancyhead[L]{\small\unitcode\ --- \assessmentname}
 \fancyhead[R]{\small\thepage}
-\fancyfoot[L]{\small TECH2100 --- T1 2026}
+\fancyfoot[L]{\small\unitcode\ --- \trimester}
 \fancyfoot[R]{\small Kaplan Business School}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.2pt}
 
 % ── Harvard Referencing (Kaplan-aligned) ────────────────────────────
-% natbib with agsm style produces Harvard author-date citations.
-% Kaplan quirks handled:
-%   - In-text: "and" between two authors; "et al." for 4+ authors
-%   - Brackets: (Author Year) or (Author Year, p. XX)
-%   - Reference list: alphabetical, left-justified, single-spaced
 \usepackage[round]{natbib}
 \bibliographystyle{kaplan-harvard}      % Custom .bst in this repo
 \setlength{\bibsep}{0pt}               % Single spacing between refs
@@ -92,7 +85,20 @@
 
 % ── Word-count helper ──────────────────────────────────────────────
 % Run:  texcount -inc -total main.tex
-% Target: 1,500 words (+/- 10%), excl. references & appendices
+
+% ════════════════════════════════════════════════════════════════════
+%  FILL IN YOUR DETAILS BELOW — these variables populate the entire
+%  document (title page, headers, footers) automatically.
+% ════════════════════════════════════════════════════════════════════
+\newcommand{\unitcode}{UNIT0000}
+\newcommand{\unitname}{Unit Name Here}
+\newcommand{\assessmentname}{Assessment X}
+\newcommand{\reporttitle}{Report Title Here}
+\newcommand{\studentname}{Your Name Here}
+\newcommand{\studentid}{XXXXXXX}
+\newcommand{\trimester}{TX 20XX}
+\newcommand{\campusname}{Your Campus}
+\newcommand{\lecturername}{Lecturer Name}
 
 % ────────────────────────────────────────────────────────────────────
 %                         DOCUMENT START
@@ -106,23 +112,21 @@
   \centering
   \vspace*{2cm}
 
-  {\LARGE\bfseries TECH2100 --- Introduction to Information Networks\\[6pt]}
-  {\Large Assessment 1: Report Evaluation\\[24pt]}
+  {\LARGE\bfseries \unitcode\ --- \unitname\\[6pt]}
+  {\Large \assessmentname\\[24pt]}
 
   \rule{\textwidth}{1pt}\\[18pt]
 
-  {\huge\bfseries Network Architecture Evaluation\\
-  for a Financial Consulting Firm\\[18pt]}
+  {\huge\bfseries \reporttitle\\[18pt]}
 
   \rule{\textwidth}{1pt}\\[36pt]
 
   {\Large
-    % ── REPLACE with your details ──
-    \textbf{Student Name:} Your Name Here\\[6pt]
-    \textbf{Student ID:}   XXXXXXX\\[6pt]
-    \textbf{Trimester:}    T1 2026\\[6pt]
-    \textbf{Campus:}       Your Campus\\[6pt]
-    \textbf{Lecturer:}     Lecturer Name\\[24pt]
+    \textbf{Student Name:} \studentname\\[6pt]
+    \textbf{Student ID:}   \studentid\\[6pt]
+    \textbf{Trimester:}    \trimester\\[6pt]
+    \textbf{Campus:}       \campusname\\[6pt]
+    \textbf{Lecturer:}     \lecturername\\[24pt]
   }
 
   \vfill
@@ -139,16 +143,20 @@
 \newpage
 
 % ═══════════════════════════════════════════════════════════════════
-%  1. EXECUTIVE SUMMARY
+%  CITATION CHEAT SHEET (delete before submission)
 % ═══════════════════════════════════════════════════════════════════
-\section{Executive Summary}
-\label{sec:executive-summary}
+% Parenthetical:  \citep{key}              → (Author Year)
+% Textual:        \citet{key}              → Author (Year)
+% With page:      \citep[p.~42]{key}       → (Author Year, p. 42)
+% Multiple:       \citep{key1,key2}        → (Author1 Year; Author2 Year)
+% No brackets:    \citealt{key}            → Author Year
+% In caption:     (adapted from \citealt{key})
 
-% ── CITATION CHEAT SHEET ────────────────────────────────────────────
-% Parenthetical:  \citep{Kurose2021}           → (Kurose \& Ross 2021)
-% Textual:        \citet{Tanenbaum2021}         → Tanenbaum et al. (2021)
-% With page:      \citep[p.~42]{Stallings2022}  → (Stallings 2022, p. 42)
-% Multiple:       \citep{Kurose2021,Tanenbaum2021}
+% ═══════════════════════════════════════════════════════════════════
+%  1. SECTION ONE
+% ═══════════════════════════════════════════════════════════════════
+\section{Section One}
+\label{sec:section-one}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -161,121 +169,121 @@ pariatur \citep{Tanenbaum2021}.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  2. NETWORK DESIGN
+%  2. SECTION TWO
 % ═══════════════════════════════════════════════════════════════════
-\section{Network Architecture Design}
-\label{sec:network-design}
+\section{Section Two}
+\label{sec:section-two}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
 habitant morbi tristique senectus et netus et malesuada fames ac turpis
 egestas \citep{Stallings2022}.
 
-\subsection{Proposed Topology and LAN/WAN Integration}
-\label{subsec:topology}
+\subsection{Subsection A}
+\label{subsec:sub-a}
 
 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
 cubilia curae. Cras sit amet nibh libero, in gravida nulla
 \citep{Forouzan2022}. Nulla vel metus scelerisque ante sollicitudin.
 
-\subsection{Network Architecture Diagram}
-\label{subsec:diagram}
+\subsection{Subsection B --- Figure Example}
+\label{subsec:sub-b}
 
-% Place your diagram(s) in the figures/ folder and reference like this:
+% Place your diagram(s) in the figures/ folder:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{dummy_network_diagram.png}
-  \caption{Placeholder network topology diagram illustrating core routing,
-           switching, and VLAN segmentation (adapted from \citealt{Kurose2021}).}
-  \label{fig:network-arch}
+  \caption{Placeholder diagram showing a sample layout
+           (adapted from \citealt{Kurose2021}).}
+  \label{fig:sample-diagram}
 \end{figure}
 
-As shown in Figure~\ref{fig:network-arch}, the proposed topology
-separates routing, switching, and client segments. \citet{Tanenbaum2021}
-recommend this layered approach for medium-scale enterprise deployments.
+As shown in Figure~\ref{fig:sample-diagram}, the layout separates
+components into distinct layers. \citet{Tanenbaum2021} recommend
+this approach for medium-scale deployments.
 
-\subsection{Communication Protocols}
-\label{subsec:protocols}
+\subsection{Subsection C}
+\label{subsec:sub-c}
 
 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
 ut fermentum massa justo sit amet risus \citep{Kreutz2015}.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  3. CRITICAL ANALYSIS
+%  3. SECTION THREE
 % ═══════════════════════════════════════════════════════════════════
-\section{Critical Analysis}
-\label{sec:critical-analysis}
+\section{Section Three}
+\label{sec:section-three}
 
-\subsection{Strengths and Weaknesses of the Proposed Design}
-\label{subsec:strengths-weaknesses}
+\subsection{Subsection A}
+\label{subsec:three-a}
 
 Maecenas sed diam eget risus varius blandit sit amet non magna. Integer
 posuere erat a ante venenatis dapibus posuere velit aliquet
 \citep{Zhang2020}. Praesent commodo cursus magna, vel scelerisque nisl
 consectetur et.
 
-\subsection{Analysis of Findings}
-\label{subsec:analysis-findings}
+\subsection{Subsection B}
+\label{subsec:three-b}
 
 Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.
 Aenean lacinia bibendum nulla sed consectetur \citep{Boutaba2018}.
 
-\subsection{Proposed Enhancements}
-\label{subsec:enhancements}
+\subsection{Subsection C}
+\label{subsec:three-c}
 
 Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus,
 porta ac consectetur ac, vestibulum at eros \citep{CiscoQoS2023}.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  4. SCENARIO-BASED PROBLEM SOLVING
+%  4. SECTION FOUR
 % ═══════════════════════════════════════════════════════════════════
-\section{Scenario-Based Problem Solving}
-\label{sec:problem-solving}
+\section{Section Four}
+\label{sec:section-four}
 
-\subsection{Hardware and Software Upgrades}
-\label{subsec:hw-sw-upgrades}
+\subsection{Subsection A}
+\label{subsec:four-a}
 
 Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus
 vel augue laoreet rutrum faucibus dolor auctor \citep{Cisco2020}.
 
-\subsection{Protocol and Configuration Recommendations}
-\label{subsec:protocol-recommendations}
+\subsection{Subsection B}
+\label{subsec:four-b}
 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 ridiculus mus \citep{IEEE802.3}. Donec ullamcorper nulla non metus
 auctor fringilla.
 
-\subsection{Scalability and Future Growth}
-\label{subsec:scalability}
+\subsection{Subsection C}
+\label{subsec:four-c}
 
 Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ut
 facilisis in, egestas eget quam \citep{Akyildiz2010}.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  5. ETHICAL CONSIDERATIONS — GENERATIVE AI
+%  5. SECTION FIVE
 % ═══════════════════════════════════════════════════════════════════
-\section{Ethical Considerations of Generative AI in Network Communications}
-\label{sec:ethics-ai}
+\section{Section Five}
+\label{sec:section-five}
 
-\subsection{Ethical Implications and Risks}
-\label{subsec:ai-risks}
+\subsection{Subsection A}
+\label{subsec:five-a}
 
 Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus,
 nisi erat porttitor ligula, eget lacinia odio sem nec elit
 \citep{Floridi2018}. Nullam id dolor id nibh ultricies vehicula ut id
 elit.
 
-\subsection{Mitigation Strategies}
-\label{subsec:ai-mitigation}
+\subsection{Subsection B}
+\label{subsec:five-b}
 
 Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
 vestibulum. Donec id elit non mi porta gravida at eget metus
 \citep{NIST2020}.
 
-\subsection{AI for Network Simulation and Failure Prediction}
-\label{subsec:ai-simulation}
+\subsection{Subsection C}
+\label{subsec:five-c}
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 Cras mattis consectetur purus sit amet fermentum \citep{Boutaba2018}.
@@ -307,19 +315,18 @@ erat a ante venenatis dapibus posuere velit aliquet.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  APPENDICES (optional — not counted in word limit)
+%  APPENDICES (optional — typically not counted in word limit)
 % ═══════════════════════════════════════════════════════════════════
 \newpage
 \appendix
-\section{Appendix A: Network Architecture Diagram (Full Size)}
-\label{app:diagram}
+\section{Appendix A: Diagrams}
+\label{app:diagrams}
 
 \textit{[Include full-size diagrams here if needed.]}
 
-\section{Appendix B: Supporting Documentation}
+\section{Appendix B: Supporting Material}
 \label{app:supporting}
 
-\textit{[Include supporting documentation, additional data, or
-supplementary analysis here.]}
+\textit{[Include supporting material here.]}
 
 \end{document}
