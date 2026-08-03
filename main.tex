@@ -3,6 +3,9 @@
 %% Generic LaTeX template for Overleaf + Git sync.
 %% Referencing: Kaplan Harvard Style Guide (v4.0, Feb 2023)
 %% ASC Guide to Report Writing compliant
+%%
+%% This file is a formatting showcase. Replace dummy content with
+%% your assessment material; keep the preamble macros as-is.
 %% ------------------------------------------------------------------
 
 \documentclass[12pt, a4paper]{article}
@@ -127,9 +130,9 @@
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\unitcode\ --- \assessmentname}
+\fancyhead[L]{\small\unitcode\ - \assessmentname}
 \fancyhead[R]{\small\thepage}
-\fancyfoot[L]{\small\unitcode\ --- \unitname}
+\fancyfoot[L]{\small\unitcode\ - \unitname}
 \fancyfoot[R]{\small Kaplan Business School - \the\year}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.2pt}
@@ -164,23 +167,31 @@
 %  FILL IN YOUR DETAILS BELOW — these variables populate the entire
 %  document (title page, headers, footers) automatically.
 % ════════════════════════════════════════════════════════════════════
-\newcommand{\unitcode}{TECH2100}
-\newcommand{\unitname}{Introduction to Information Networks}
-\newcommand{\assessmentname}{Assessment 1}
-\newcommand{\reporttitle}{Report Evaluation}
-\newcommand{\studentname}{Patrick de Freitas}
-\newcommand{\studentid}{1885133}
+\newcommand{\unitcode}{UNIT0000}
+\newcommand{\unitname}{Sample Unit Name}
+\newcommand{\assessmentname}{Assessment X}
+\newcommand{\reporttitle}{Sample Report Title}
+\newcommand{\studentname}{Student Name}
+\newcommand{\studentid}{0000000}
 \newcommand{\trimester}{TX 20XX}
-\newcommand{\campusname}{KBS Perth}
+\newcommand{\campusname}{KBS Campus}
 \newcommand{\lecturername}{Lecturer Name}
 
 % ════════════════════════════════════════════════════════════════════
 %  DEFINE ACRONYMS HERE
-%  First use in text:       \acrfull{key}  → Full Name (ABR)
-%  Subsequent uses:         \acrshort{key} → ABR
-%  Example:
-%  \newacronym{zta}{ZTA}{Zero Trust Architecture}
+%  First use in text:       \gls{key}     → Full Name (ABR)
+%  Subsequent uses:         \gls{key}     → ABR
+%  Force full:              \acrfull{key}
+%  Short only:              \acrshort{key}
 % ════════════════════════════════════════════════════════════════════
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{vpn}{VPN}{Virtual Private Network}
+\newacronym{sla}{SLA}{Service Level Agreement}
+
+\newglossaryentry{latency}{
+  name={latency},
+  description={The time delay between a request being sent and a response being received}
+}
 
 
 % ────────────────────────────────────────────────────────────────────
@@ -195,7 +206,7 @@
   \centering
   \vspace*{2cm}
 
-  {\LARGE\bfseries \unitcode\ --- \unitname\\[6pt]}
+  {\LARGE\bfseries \unitcode\ - \unitname\\[6pt]}
   {\Large \assessmentname\\[24pt]}
 
   \rule{\textwidth}{1pt}\\[18pt]
@@ -236,11 +247,11 @@
 \addcontentsline{toc}{section}{Executive Summary}
 \label{sec:executive-summary}
 
-\textit{[Write this section last. It should be half to three-quarters
-of a page (50--300 words) and include:
-the purpose and a brief description of the research;
-a summary of the findings and conclusions;
-a summary of the key recommendations.]}
+This showcase report demonstrates the formatting features of the Kaplan
+report template. It summarises a fictional systems review, outlines key
+findings related to reliability and documentation quality, and points to
+recommendations for clearer evidence logging and reproducible configuration
+steps. The body below uses dummy content only.
 
 \newpage
 
@@ -260,50 +271,80 @@ a summary of the key recommendations.]}
 % In caption:     (adapted from \citealt{key})
 
 % ═══════════════════════════════════════════════════════════════════
-%  1. INTRODUCTION (ASC Guide — background, purpose, scope)
+%  1. INTRODUCTION
 % ═══════════════════════════════════════════════════════════════════
 \section{Introduction}
 \label{sec:introduction}
 
-\textit{[Background: Briefly describe the context and identify the
-general subject matter indicating why the report was commissioned.]}
+This section establishes the background, purpose, and scope of the sample
+report. The organisation in this example operates a hybrid environment and
+relies on a \gls{vpn} for remote staff access. First use of an acronym
+expands automatically; later uses of \gls{vpn} remain abbreviated.
 
-\textit{[Purpose: Describe the issue(s) or problem(s) to be reported
-on and what the report hopes to accomplish.]}
+The purpose of this document is to demonstrate template features rather
+than present a real assessment outcome.\footnote{Footnotes use hanging
+indentation, increased separation from the body text, and a shortened
+rule so long explanatory notes remain readable.}
 
-\textit{[Scope: Outline what issues are covered in the report and
-what issues are not covered. Also known as the brief or terms of
-reference.]}
-
-% ═══════════════════════════════════════════════════════════════════
-%  2. SECTION TWO
-% ═══════════════════════════════════════════════════════════════════
-\section{Potential reputation, financial and legal loss of current network architecture}
-\label{sec:section-one}
-
-Along the years, technologies have been experiencing a rapidly evolution and it close to what is known as Moore's law. Intel co-founder Gordon Moore predicted a doubling of transistors every year for the next 10 years in his original paper published in 1965. This boom in the evolution is followed by its demand adding extra stress to the network infrastructure and a major outage in entire Australia could potentially cause a damage of AUD \$29,828,489 per hour (Figure 01).
-
-Figure 01: Data from the Netblocks, the economic impact of a single hypothetical internet disruption of the specified type, location and duration.
+Scope covers sample prose, lists, citations, tables, figures, code
+blocks, prompt blocks, and appendices. Items outside scope include live
+deployment data and organisation-specific credentials.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  3. SECTION THREE
+%  2. FINDINGS WITH LISTS, CITATIONS, FOOTNOTES
 % ═══════════════════════════════════════════════════════════════════
-\section{Section Three}
-\label{sec:section-three}
+\section{Findings}
+\label{sec:findings}
 
-\subsection{Subsection A}
-\label{subsec:three-a}
+\subsection{Evidence summary}
+\label{subsec:findings-evidence}
 
-Maecenas sed diam eget risus varius blandit sit amet non magna. Integer
-posuere erat a ante venenatis dapibus posuere velit aliquet
-\citep{Zhang2020}. Praesent commodo cursus magna, vel scelerisque nisl
-consectetur et.
+According to \citet{Kurose2021}, layered designs remain a practical way
+to reason about interconnected systems. Parenthetical citations follow
+Kaplan Harvard formatting \citep{Tanenbaum2021,NIST2020}.
 
-\subsection{Subsection B --- Figure Example}
-\label{subsec:three-b}
+Key observations from the fictional review:
+\begin{itemize}[leftmargin=1.5em]
+  \item Baseline monitoring covered availability but not \gls{api} error budgets.
+  \item Change records lacked a consistent link to configuration snapshots.
+  \item Remote access depended on a single \gls{vpn} concentrator.\footnote{In a
+        real report, expand this note with dates, ticket IDs, or verification
+        steps used to confirm the finding.}
+\end{itemize}
 
-% Place your diagram(s) in the figures/ folder:
+\subsection{Priority ranking}
+\label{subsec:findings-priority}
+
+Table~\ref{tab:sample-priorities} shows a compact severity matrix suitable
+for short reports.
+
+\begin{table}[H]
+  \centering
+  \caption{Sample priority ranking for fictional findings}
+  \label{tab:sample-priorities}
+  \begin{tabularx}{\textwidth}{l X c c}
+    \toprule
+    \textbf{ID} & \textbf{Finding} & \textbf{Likelihood} & \textbf{Impact} \\
+    \midrule
+    F1 & Incomplete monitoring coverage for \acrshort{api} endpoints & Likely & Medium \\
+    F2 & Single point of failure on remote access path & Possible & High \\
+    F3 & Weak evidence trail for configuration changes & Likely & Low \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+
+% ═══════════════════════════════════════════════════════════════════
+%  3. FIGURE EXAMPLE
+% ═══════════════════════════════════════════════════════════════════
+\section{Architecture overview}
+\label{sec:architecture}
+
+Figure~\ref{fig:sample-diagram} is a placeholder diagram stored in the
+\texttt{figures/} folder. Captions remain bold-labelled and can cite
+adapted sources in-text.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{dummy_network_diagram.png}
@@ -312,69 +353,58 @@ consectetur et.
   \label{fig:sample-diagram}
 \end{figure}
 
-As shown in Figure~\ref{fig:sample-diagram}, the layout separates
-components into distinct layers. \citet{Tanenbaum2021} recommend
-this approach for medium-scale deployments.
-
-\subsection{Subsection C}
-\label{subsec:three-c}
-
-Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-ut fermentum massa justo sit amet risus \citep{Kreutz2015}.
+As shown in Figure~\ref{fig:sample-diagram}, components are separated
+into logical tiers. \citet{Tanenbaum2021} discuss similar separation of
+concerns for medium-scale deployments. Lower \gls{latency} between tiers
+is treated as a design goal rather than a measured result in this sample.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  4. SECTION FOUR
+%  4. CODE BLOCK
 % ═══════════════════════════════════════════════════════════════════
-\section{Section Four}
-\label{sec:section-four}
+\section{Configuration example}
+\label{sec:code}
 
-\subsection{Subsection A}
-\label{subsec:four-a}
+Numbered Python listings use the \texttt{python} style. Comments, keywords,
+and strings are highlighted; long lines wrap inside the frame.
 
-Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus
-vel augue laoreet rutrum faucibus dolor auctor \citep{Cisco2020}.
+\begin{lstlisting}[style=python]
+def health_check(endpoint: str, timeout: int = 5) -> bool:
+    """Return True when the sample endpoint responds successfully."""
+    # Placeholder logic for the template showcase
+    status = request_status(endpoint, timeout=timeout)
+    return status == "ok"
+\end{lstlisting}
 
-\subsection{Subsection B}
-\label{subsec:four-b}
+Plain command or router output can reuse the same style when syntax
+highlighting is still helpful:
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-ridiculus mus \citep{IEEE802.3}. Donec ullamcorper nulla non metus
-auctor fringilla.
-
-\subsection{Subsection C}
-\label{subsec:four-c}
-
-Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ut
-facilisis in, egestas eget quam \citep{Akyildiz2010}.
+\begin{lstlisting}[style=python]
+ping 192.0.2.1
+# Reply from 192.0.2.1: bytes=32 time=4ms TTL=64
+\end{lstlisting}
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  5. SECTION FIVE
+%  5. PROMPT BLOCK
 % ═══════════════════════════════════════════════════════════════════
-\section{Section Five}
-\label{sec:section-five}
+\section{Generative AI usage}
+\label{sec:prompts}
 
-\subsection{Subsection A}
-\label{subsec:five-a}
+Prompt blocks use the \texttt{prompt} style: monospaced text, framed
+background, and no line numbers. Keep model details next to the prompt
+so reviewers can audit the interaction.
 
-Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus,
-nisi erat porttitor ligula, eget lacinia odio sem nec elit
-\citep{Floridi2018}. Nullam id dolor id nibh ultricies vehicula ut id
-elit.
+\textbf{Model:} Example Model Name
 
-\subsection{Subsection B}
-\label{subsec:five-b}
+\begin{lstlisting}[style=prompt]
+Summarise the three highest-priority findings from the sample review.
+For each finding, propose one verification step that does not require
+production access. Keep the response under 150 words.
+\end{lstlisting}
 
-Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-vestibulum. Donec id elit non mi porta gravida at eget metus
-\citep{NIST2020}.
-
-\subsection{Subsection C}
-\label{subsec:five-c}
-
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-Cras mattis consectetur purus sit amet fermentum \citep{Boutaba2018}.
+Longer collaboration logs belong in the appendix so the body stays concise
+(see Appendix~\ref{app:a1-prompt}).
 
 
 % ═══════════════════════════════════════════════════════════════════
@@ -383,21 +413,24 @@ Cras mattis consectetur purus sit amet fermentum \citep{Boutaba2018}.
 \section{Conclusion}
 \label{sec:conclusion}
 
-Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere
-erat a ante venenatis dapibus posuere velit aliquet.
+The sample review shows how the template supports academic report structure
+while also covering technical artefacts such as code, prompts, footnotes,
+and appendix evidence. Dummy values in the preamble can be replaced without
+changing the formatting layer.
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  7. RECOMMENDATIONS (ASC Guide — separate from Conclusion)
+%  7. RECOMMENDATIONS
 % ═══════════════════════════════════════════════════════════════════
 \section{Recommendations}
 \label{sec:recommendations}
 
-\textit{[Provide clear, actionable recommendations based on the
-findings and conclusions presented in the report. Each recommendation
-should be specific and justified by the evidence discussed in the
-body of the report.]}
+\begin{enumerate}[leftmargin=1.5em]
+  \item Record each Generative AI prompt and model name in the appendix.
+  \item Attach reproducible configuration snippets using the code style.
+  \item Use footnotes for short clarifications that would interrupt flow.
+  \item Keep \gls{sla} assumptions explicit when ranking impact.
+\end{enumerate}
 
 
 % ═══════════════════════════════════════════════════════════════════
@@ -415,36 +448,58 @@ body of the report.]}
 
 
 % ═══════════════════════════════════════════════════════════════════
-%  APPENDICES (optional — typically not counted in word limit)
+%  APPENDICES
 %  Numbered A1, A2, A3...  Pair prompts with response screenshots.
-%  Usage:
-%    \begin{lstlisting}[style=prompt] ... \end{lstlisting}
-%    \begin{lstlisting}[style=python] ... \end{lstlisting}
 % ═══════════════════════════════════════════════════════════════════
 \newpage
 \appendix
 \renewcommand{\thesection}{A\arabic{section}}
 
-\section{Diagrams}
-\label{app:diagrams}
+\section{Prompt - Findings summary}
+\label{app:a1-prompt}
 
-\textit{[Include full-size diagrams here if needed.]}
+Initial prompt used to draft a concise findings summary for review.
 
-\section{Supporting Material}
-\label{app:supporting}
+\textbf{Model:} Example Model Name
 
-\textit{[Include supporting material here.]}
+\begin{lstlisting}[style=prompt]
+You are assisting with academic report drafting.
+Using only the three findings F1-F3 from the sample priority table,
+write:
+1. one sentence per finding
+2. one verification step per finding
+Do not invent organisational names or metrics.
+\end{lstlisting}
 
-\section{Prompt - Example}
-\label{app:a3-prompt}
+\section{Code - Health-check helper}
+\label{app:a2-code}
 
-\textit{[Document Generative AI prompts used. Include model name.]}
+Extended listing kept in the appendix when the body only needs a short
+excerpt.
 
-% \textbf{Model:} Claude / ChatGPT / etc.
-%
-% \begin{lstlisting}[style=prompt]
-% Your prompt text here.
-% \end{lstlisting}
+\begin{lstlisting}[style=python]
+from typing import Optional
+
+def request_status(endpoint: str, timeout: int = 5) -> Optional[str]:
+    """Dummy helper used by the showcase health_check function."""
+    if not endpoint:
+        return None
+    # Pretend network call
+    return "ok"
+\end{lstlisting}
+
+\section{Supporting material}
+\label{app:a3-supporting}
+
+Use this appendix for screenshots, full-size diagrams, or exported logs.
+Cross-reference from the body with \texttt{\textbackslash ref\{app:a3-supporting\}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{dummy_network_diagram.png}
+  \caption{Appendix copy of the placeholder diagram.}
+  \label{fig:app-diagram}
+\end{figure}
 
 
 % ═══════════════════════════════════════════════════════════════════
